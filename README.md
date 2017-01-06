@@ -1,3 +1,5 @@
 #File translation plugin
 
-WIP
+Enables multi-lingual file upload attributes in October CMS
+
+Documentation coming soon...
