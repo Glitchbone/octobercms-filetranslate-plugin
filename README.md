@@ -1,8 +1,8 @@
-#File translation plugin
+# File translation plugin
 
 Enables multi-lingual file upload attributes in October CMS
 
-##Usage
+## Usage
 
 **[Translate plugin](https://octobercms.com/plugin/rainlab-translate)** must be installed first
 
@@ -38,6 +38,6 @@ photos:
     imageHeight: 200
 ```
 
-##License
+## License
 
 File translation plugin is available under the MIT license. See the [LICENSE](LICENSE.md) file for more information.
