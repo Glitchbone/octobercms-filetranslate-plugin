@@ -43,6 +43,8 @@ class MLFileUpload extends FileUpload
      */
     public function onSaveAttachmentConfig()
     {
+        $translator = Translator::instance();
+        $defaultLocale = $translator->getDefaultLocale();
         try {
             $fileModel = $this->getRelationModel();
             if (($fileId = post('file_id')) && ($file = $fileModel::find($fileId))) {
@@ -51,11 +53,10 @@ class MLFileUpload extends FileUpload
                     foreach($attrs as $k => $v) {
                         $file->lang($code)->$k = $v;
                     }
+                    $file->lang($code)->save();
                 }
 
-                $file->save();
-
-                return ['displayName' => $file->title ?: $file->file_name];
+                return ['displayName' => $file->lang($defaultLocale)->title ?: $file->lang($defaultLocale)->file_name];
             }
 
             throw new ApplicationException('Unable to find file, it may no longer exist');
